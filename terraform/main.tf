@@ -1,13 +1,6 @@
 terraform {
   required_version = "~> 1.3"
 
-  # backend "s3" {
-  #   bucket  = "django-ecs-ecr-terraform-11"
-  #   key     = "tf-infra/terraform.tfstate"
-  #   region  = "ap-southeast-1"
-  #   encrypt = true
-  # }
-
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -16,11 +9,6 @@ terraform {
   }
 }
 
-# module "tf-state" {
-#   source      = "./modules/tf-state"
-#   bucket_name = local.bucket_name
-#   table_name  = local.table_name
-# }
 
 module "ecrRepo" {
   source = "./modules/ecr"
