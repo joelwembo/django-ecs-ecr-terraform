@@ -55,3 +55,12 @@ docker tag django-app-ecr-repo:latest xxxxxxxxxxxxxx.dkr.ecr.ap-southeast-1.amaz
 docker push xxxxxxxxxxxxxx.dkr.ecr.ap-southeast-1.amazonaws.com/django-app-ecr-repo:latest
 
 5. test locally first
+
+
+Deploying a large scale django application to aws can be a bit challenging. You can use your Amazon ECR private repositories to host container images and artifacts that your Amazon ECS tasks may pull from. 
+
+In this article, we are going to illustrate how to Use Terraform to provision AWS ECS and ECR to deploy containerized Django Web App.
+
+we also create a CI/CD pipeline using Github Actions to deploy the dockerized django application to ECS. The pipeline will be triggered on every push to the main branch. The pipeline will update newly terraform added resources, build the docker image, push it to ECR, and update the ECS service with the new image.
+
+

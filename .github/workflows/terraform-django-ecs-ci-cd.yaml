@@ -25,7 +25,7 @@
 #  terraform:
 #    name: "Terraform Pipeline AWS  Django ECS ECR"
 #    runs-on: ubuntu-latest
-#    environment: prod
+#    environment: production
 #    defaults:
 #      run:
 #        shell: bash
